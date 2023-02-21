@@ -1,0 +1,53 @@
+{
+    "system": {
+        "dataset": "TUSIMPLE",
+        "batch_size": 128,
+
+        "sampling_function": "kp_detection",
+
+        "train_split": "train",
+        "val_split": "val",
+        "test_split": "test",
+
+        "learning_rate": 0.0001,
+        "decay_rate": 10,
+
+        "val_iter": 5000,
+        "display": 1000,
+
+        "opt_algo": "adam",
+        "prefetch_size": 5,
+
+        "max_iter": 707640,
+        "stepsize": 20000,
+        "snapshot": 1000,
+
+        "cache_dir": "./oldcache",
+        "result_dir": "./results",
+        "data_dir": "/data/heyuxing/lanedetect/oldanno/",
+
+        "res_layers": [1, 2, 2, 2],
+        "res_dims": [32, 32, 64, 128],
+        "res_strides": [1, 2, 2, 2],
+        "attn_dim": 32,
+        "dim_feedforward": 128,
+
+        "lsp_dim": 7,
+
+        "num_heads": 2,
+        "enc_layers": 2,
+        "dec_layers": 2,
+        "block": "BasicBlock",
+        "num_queries": 16,
+
+        "freeze_dict": ["backbone",  "transformer", "class_embed", "specific_embed"]
+    },
+    
+    "db": {
+        "rand_color": true,
+        "input_size": [192, 960],
+        "test_scales": [1],
+        "categories": 8,
+        "lane_categories": 9
+    }
+}
